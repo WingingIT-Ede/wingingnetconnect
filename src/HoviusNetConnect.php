@@ -26,7 +26,7 @@ class HoviusNetConnect
             return redirect()->route('login');
         }
 
-        return json_decode($result, true)['login_reference'];
+        return json_decode($result, true);
 
 
     }
@@ -49,7 +49,7 @@ class HoviusNetConnect
             return redirect()->route('login');
         }
 
-        return json_decode($result, true)['login_reference'];
+        return json_decode($result, true);
     }
 
     public static function checkAccount($token){

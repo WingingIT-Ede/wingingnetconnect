@@ -51,7 +51,7 @@ class HoviusNetConnect
                 'Accept' => 'application/json',
                 'Authorization' => $token,
             ],
-            'body' => json_encode([
+            'form_params' => json_encode([
                 'client_id' => config('hoviusnetconnect.client_id')
             ])
         ]);

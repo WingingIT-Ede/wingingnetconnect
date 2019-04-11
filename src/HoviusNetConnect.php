@@ -51,10 +51,9 @@ class HoviusNetConnect
                 'Accept' => 'application/json',
                 'Authorization' => $token,
             ],
-            'body' => json_encode([
-                'client_id' => config('hoviusnetconnect.client_id')
-            ])
-        ]);
+        ])->withBody(json_encode([
+            'client_id' => config('hoviusnetconnect.client_id')
+        ]));
         dd($response->getBody());
         return (bool)json_decode((string) $response->getBody(), true)['existing_account'];
     }

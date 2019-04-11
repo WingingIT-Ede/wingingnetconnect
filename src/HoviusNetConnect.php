@@ -19,7 +19,7 @@ class HoviusNetConnect
             ]
         ]);
         if(!empty(json_decode((string) $response->getBody(), true)['error'])) {
-            redirect()->route('auth.login');
+            return redirect()->route('login');
         }
         return json_decode((string) $response->getBody(), true)['login_reference'];
     }
@@ -37,7 +37,7 @@ class HoviusNetConnect
             ]
         ]);
         if(!empty(json_decode((string) $response->getBody(), true)['error'])) {
-            redirect()->route('auth.login');
+            return redirect()->route('login');
         }
 
         return json_decode((string) $response->getBody(), true)['login_reference'];

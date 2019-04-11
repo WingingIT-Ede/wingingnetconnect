@@ -55,8 +55,8 @@ class HoviusNetConnect
                 'client_id' => config('hoviusnetconnect.client_id')
             ])
         ]);
-
-        return json_decode((string) $response->getBody(), true)['login_reference'];
+        dd($response);
+        return (bool)json_decode((string) $response->getBody(), true)['existing_account'];
     }
 
     public static function drawConnectButton(){

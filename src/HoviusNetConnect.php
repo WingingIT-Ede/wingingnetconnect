@@ -2,6 +2,7 @@
 
 namespace Wshovius\HoviusNetConnect;
 
+use Exception;
 use GuzzleHttp\Client;
 
 class HoviusNetConnect
@@ -81,7 +82,7 @@ class HoviusNetConnect
     public static function getAuthToken($code){
         $http = new Client;
 
-        $response = $http->post('https://network.wshovius.nl/oauth/token', [
+        try{$response = $http->post('https://network.wshovius.nl/oauth/token', [
             'form_params' => [
                 'grant_type' => 'authorization_code',
                 'client_id' => config('hoviusnetconnect.client_id'),
@@ -90,6 +91,9 @@ class HoviusNetConnect
                 'code' => $code,
             ]
         ]);
+        } catch(Exception $e){
+            return redirect()->route('login');
+        }
 
         return 'Bearer ' . json_decode((string) $response->getBody(), true)['access_token'];
     }

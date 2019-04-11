@@ -55,7 +55,7 @@ class HoviusNetConnect
                 'client_id' => config('hoviusnetconnect.client_id')
             ])
         ]);
-        dd($response);
+        dd($response->getBody());
         return (bool)json_decode((string) $response->getBody(), true)['existing_account'];
     }
 

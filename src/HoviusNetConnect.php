@@ -4,5 +4,19 @@ namespace Wshovius\HoviusNetConnect;
 
 class HoviusNetConnect
 {
-    // Build wonderful things
+    public static function login(){
+
+    }
+
+    public static function register(){
+
+    }
+
+    public static function checkAccount(){
+
+    }
+
+    public static function drawConnectButton(){
+        return view('wshovius::connectbutton');
+    }
 }

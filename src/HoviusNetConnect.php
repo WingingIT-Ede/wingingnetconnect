@@ -9,16 +9,15 @@ class HoviusNetConnect
     public static function login($token){
         $http = new Client;
 
-        $request = $http->post('https://network.wshovius.nl/api/remotelogin', [
+        $response = $http->post('https://network.wshovius.nl/api/remotelogin', [
             'header' => [
                 'Accept' => 'application/json',
                 'Authorization' => $token,
             ],
-            'body' => [
+            'body' => json_encode([
                 'client_id' => config('hoviusnetconnect.client_id')
-            ]
+            ])
         ]);
-        $response = $request->send();
         if(!empty(json_decode((string) $response->getBody(), true)['error'])) {
             return redirect()->route('login');
         }
@@ -33,9 +32,9 @@ class HoviusNetConnect
                 'Accept' => 'application/json',
                 'Authorization' => $token,
             ],
-            'body' => [
+            'body' => json_encode([
                 'client_id' => config('hoviusnetconnect.client_id')
-            ]
+            ])
         ]);
         if(!empty(json_decode((string) $response->getBody(), true)['error'])) {
             return redirect()->route('login');
@@ -47,16 +46,16 @@ class HoviusNetConnect
     public static function checkAccount($token){
         $http = new Client;
 
-        $request = $http->post('https://network.wshovius.nl/api/checkAccount', [
+        $response = $http->post('https://network.wshovius.nl/api/checkAccount', [
             'header' => [
                 'Accept' => 'application/json',
                 'Authorization' => $token,
             ],
-            'body' => [
+            'body' => json_encode([
                 'client_id' => config('hoviusnetconnect.client_id')
-            ]
+            ])
         ]);
-        $response = $request->send();
+
         return json_decode((string) $response->getBody(), true)['login_reference'];
     }
 
@@ -67,7 +66,7 @@ class HoviusNetConnect
     public static function getAuthToken($code){
         $http = new Client;
 
-        $request = $http->post('https://network.wshovius.nl/oauth/token', [
+        $response = $http->post('https://network.wshovius.nl/oauth/token', [
             'form_params' => [
                 'grant_type' => 'authorization_code',
                 'client_id' => config('hoviusnetconnect.client_id'),
@@ -77,7 +76,6 @@ class HoviusNetConnect
             ]
         ]);
 
-        $response = $request->send();
         return 'Bearer ' . json_decode((string) $response->getBody(), true)['access_token'];
     }
 }

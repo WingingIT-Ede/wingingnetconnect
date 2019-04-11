@@ -6,16 +6,57 @@ use GuzzleHttp\Client;
 
 class HoviusNetConnect
 {
-    public static function login(){
+    public static function login($token){
+        $http = new Client;
 
+        $response = $http->post('https://network.wshovius.nl/api/remotelogin', [
+            'header' => [
+                'Accept' => 'application/json',
+                'Authorization' => $token,
+            ],
+            'body' => [
+                'client_id' => config('hoviusnetconnect.client_id')
+            ]
+        ]);
+        if(!empty(json_decode((string) $response->getBody(), true)['error'])) {
+            redirect()->route('auth.login');
+        }
+        return json_decode((string) $response->getBody(), true)['login_reference'];
     }
 
-    public static function register(){
+    public static function register($token){
+        $http = new Client;
 
+        $response = $http->post('https://network.wshovius.nl/api/newregistration', [
+            'header' => [
+                'Accept' => 'application/json',
+                'Authorization' => $token,
+            ],
+            'body' => [
+                'client_id' => config('hoviusnetconnect.client_id')
+            ]
+        ]);
+        if(!empty(json_decode((string) $response->getBody(), true)['error'])) {
+            redirect()->route('auth.login');
+        }
+
+        return json_decode((string) $response->getBody(), true)['login_reference'];
     }
 
-    public static function checkAccount($code = null){
+    public static function checkAccount($token){
+        $http = new Client;
 
+        $response = $http->post('https://network.wshovius.nl/api/checkAccount', [
+            'header' => [
+                'Accept' => 'application/json',
+                'Authorization' => $token,
+            ],
+            'body' => [
+                'client_id' => config('hoviusnetconnect.client_id')
+            ]
+        ]);
+
+        return json_decode((string) $response->getBody(), true)['login_reference'];
     }
 
     public static function drawConnectButton(){
@@ -35,7 +76,6 @@ class HoviusNetConnect
             ]
         ]);
 
-        dd($response);
-        return $response;
+        return 'Bearer ' . json_decode((string) $response->getBody(), true)['access_token'];
     }
 }

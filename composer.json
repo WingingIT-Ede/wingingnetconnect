@@ -9,7 +9,7 @@
             "homepage": "author homepage"
         }
     ],
-    "homepage": "https://github.com/wingingit/wingingnetconnect",
+    "homepage": "https://github.com/WingingIT-Ede/wingingnetconnect",
     "keywords": ["Laravel", "WingingNetConnect"],
     "require": {
         "illuminate/support": "~5"

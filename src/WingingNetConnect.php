@@ -55,7 +55,7 @@ class WingingNetConnect
     public static function checkAccount($token){
 
 
-        $url = 'http://connect.wingingit.nl/api/checkAccount';
+        $url = 'https://connect.wingingit.nl/api/checkAccount';
         $data = ['client_id' => '1'];
 
 // use key 'http' even if you send the request to https://...

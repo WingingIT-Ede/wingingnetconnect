@@ -1,6 +1,6 @@
 <?php
 
-namespace Wshovius\WingingNetConnect\Facades;
+namespace WingingIt\WingingNetConnect\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

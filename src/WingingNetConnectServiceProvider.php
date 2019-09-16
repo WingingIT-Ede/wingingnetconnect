@@ -1,6 +1,6 @@
 <?php
 
-namespace Wshovius\WingingNetConnect;
+namespace WingingIt\WingingNetConnect;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,8 +13,8 @@ class WingingNetConnectServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'wshovius');
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'wshovius');
+        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'WingingIt');
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'WingingIt');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
@@ -63,17 +63,17 @@ class WingingNetConnectServiceProvider extends ServiceProvider
 
         // Publishing the views.
         /*$this->publishes([
-            __DIR__.'/../resources/views' => base_path('resources/views/vendor/wshovius'),
+            __DIR__.'/../resources/views' => base_path('resources/views/vendor/WingingIt'),
         ], 'wingingnetconnect.views');*/
 
         // Publishing assets.
         /*$this->publishes([
-            __DIR__.'/../resources/assets' => public_path('vendor/wshovius'),
+            __DIR__.'/../resources/assets' => public_path('vendor/WingingIt'),
         ], 'wingingnetconnect.views');*/
 
         // Publishing the translation files.
         /*$this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('lang/vendor/wshovius'),
+            __DIR__.'/../resources/lang' => resource_path('lang/vendor/WingingIt'),
         ], 'wingingnetconnect.views');*/
 
         // Registering package commands.

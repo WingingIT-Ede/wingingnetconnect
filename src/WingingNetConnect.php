@@ -1,6 +1,6 @@
 <?php
 
-namespace Wshovius\WingingNetConnect;
+namespace WingingIt\WingingNetConnect;
 
 use Exception;
 use GuzzleHttp\Client;
@@ -76,7 +76,7 @@ class WingingNetConnect
     }
 
     public static function drawConnectButton(){
-        return view('wshovius::connectbutton');
+        return view('WingingIt::connectbutton');
     }
 
     public static function getAuthToken($code){

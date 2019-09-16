@@ -1,5 +1,5 @@
 {
-    "name": "wshovius/hoviusnetconnect",
+    "name": "wingingit/wingingnetconnect",
     "description": ":description",
     "license": "license",
     "authors": [
@@ -9,34 +9,30 @@
             "homepage": "author homepage"
         }
     ],
-    "homepage": "https://github.com/wshovius/hoviusnetconnect",
-    "keywords": ["Laravel", "HoviusNetConnect"],
+    "homepage": "https://github.com/wingingit/wingingnetconnect",
+    "keywords": ["Laravel", "WingingNetConnect"],
     "require": {
         "illuminate/support": "~5"
     },
     "require-dev": {
-        "phpunit/phpunit": "~7.0",
-        "mockery/mockery": "^1.1",
-        "orchestra/testbench": "~3.0",
-        "sempro/phpunit-pretty-print": "^1.0"
     },
     "autoload": {
         "psr-4": {
-            "Wshovius\\HoviusNetConnect\\": "src/"
+            "WingingIt\\WingingNetConnect\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Wshovius\\HoviusNetConnect\\Tests\\": "tests"
+            "WingingIt\\WingingNetConnect\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Wshovius\\HoviusNetConnect\\HoviusNetConnectServiceProvider"
+                "WingingIt\\WingingNetConnect\\WingingNetConnectServiceProvider"
             ],
             "aliases": {
-                "HoviusNetConnect": "Wshovius\\HoviusNetConnect\\Facades\\HoviusNetConnect"
+                "WingingNetConnect": "WingingIt\\WingingNetConnect\\Facades\\WingingNetConnect"
             }
         }
     }

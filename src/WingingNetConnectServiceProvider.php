@@ -1,10 +1,10 @@
 <?php
 
-namespace Wshovius\HoviusNetConnect;
+namespace Wshovius\WingingNetConnect;
 
 use Illuminate\Support\ServiceProvider;
 
-class HoviusNetConnectServiceProvider extends ServiceProvider
+class WingingNetConnectServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
@@ -31,11 +31,11 @@ class HoviusNetConnectServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/hoviusnetconnect.php', 'hoviusnetconnect');
+        $this->mergeConfigFrom(__DIR__.'/../config/wingingnetconnect.php', 'wingingnetconnect');
 
         // Register the service the package provides.
-        $this->app->singleton('hoviusnetconnect', function ($app) {
-            return new HoviusNetConnect;
+        $this->app->singleton('wingingnetconnect', function ($app) {
+            return new WingingNetConnect;
         });
     }
 
@@ -46,7 +46,7 @@ class HoviusNetConnectServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['hoviusnetconnect'];
+        return ['wingingnetconnect'];
     }
     
     /**
@@ -58,23 +58,23 @@ class HoviusNetConnectServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/hoviusnetconnect.php' => config_path('hoviusnetconnect.php'),
-        ], 'hoviusnetconnect.config');
+            __DIR__.'/../config/wingingnetconnect.php' => config_path('wingingnetconnect.php'),
+        ], 'wingingnetconnect.config');
 
         // Publishing the views.
         /*$this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/wshovius'),
-        ], 'hoviusnetconnect.views');*/
+        ], 'wingingnetconnect.views');*/
 
         // Publishing assets.
         /*$this->publishes([
             __DIR__.'/../resources/assets' => public_path('vendor/wshovius'),
-        ], 'hoviusnetconnect.views');*/
+        ], 'wingingnetconnect.views');*/
 
         // Publishing the translation files.
         /*$this->publishes([
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/wshovius'),
-        ], 'hoviusnetconnect.views');*/
+        ], 'wingingnetconnect.views');*/
 
         // Registering package commands.
         // $this->commands([]);

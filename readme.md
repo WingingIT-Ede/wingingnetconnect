@@ -1,4 +1,4 @@
-# HoviusNetConnect
+# WingingNetConnect
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -12,7 +12,7 @@ This is where your description should go. Take a look at [contributing.md](contr
 Via Composer
 
 ``` bash
-$ composer require wshovius/hoviusnetconnect
+$ composer require wshovius/wingingnetconnect
 ```
 
 ## Usage
@@ -44,14 +44,14 @@ If you discover any security related issues, please email author email instead o
 
 license. Please see the [license file](license.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/wshovius/hoviusnetconnect.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/wshovius/hoviusnetconnect.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/wshovius/hoviusnetconnect/master.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/wshovius/wingingnetconnect.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/wshovius/wingingnetconnect.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/wshovius/wingingnetconnect/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/12345678/shield
 
-[link-packagist]: https://packagist.org/packages/wshovius/hoviusnetconnect
-[link-downloads]: https://packagist.org/packages/wshovius/hoviusnetconnect
-[link-travis]: https://travis-ci.org/wshovius/hoviusnetconnect
+[link-packagist]: https://packagist.org/packages/wshovius/wingingnetconnect
+[link-downloads]: https://packagist.org/packages/wshovius/wingingnetconnect
+[link-travis]: https://travis-ci.org/wshovius/wingingnetconnect
 [link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/wshovius
 [link-contributors]: ../../contributors

@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `HoviusNetConnect` will be documented in this file.
+All notable changes to `WingingNetConnect` will be documented in this file.
 
 ## Version 1.0
 

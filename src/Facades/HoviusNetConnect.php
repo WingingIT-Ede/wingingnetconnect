@@ -1,10 +1,10 @@
 <?php
 
-namespace Wshovius\HoviusNetConnect\Facades;
+namespace Wshovius\WingingNetConnect\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class HoviusNetConnect extends Facade
+class WingingNetConnect extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -13,6 +13,6 @@ class HoviusNetConnect extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'hoviusnetconnect';
+        return 'wingingnetconnect';
     }
 }

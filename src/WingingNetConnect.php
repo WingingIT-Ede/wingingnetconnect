@@ -1,15 +1,15 @@
 <?php
 
-namespace Wshovius\HoviusNetConnect;
+namespace Wshovius\WingingNetConnect;
 
 use Exception;
 use GuzzleHttp\Client;
 
-class HoviusNetConnect
+class WingingNetConnect
 {
     public static function login($token){
 
-        $url = 'https://network.wshovius.nl/api/remotelogin';
+        $url = 'https://connect.wingingit.nl/api/remotelogin';
         $data = ['client_id' => '1'];
 
 // use key 'http' even if you send the request to https://...
@@ -32,7 +32,7 @@ class HoviusNetConnect
     }
 
     public static function register($token){
-        $url = 'https://network.wshovius.nl/api/newregistration';
+        $url = 'https://connect.wingingit.nl/api/newregistration';
             $data = ['client_id' => '1'];
 
 // use key 'http' even if you send the request to https://...
@@ -55,7 +55,7 @@ class HoviusNetConnect
     public static function checkAccount($token){
 
 
-        $url = 'http://network.wshovius.nl/api/checkAccount';
+        $url = 'http://connect.wingingit.nl/api/checkAccount';
         $data = ['client_id' => '1'];
 
 // use key 'http' even if you send the request to https://...
@@ -82,12 +82,12 @@ class HoviusNetConnect
     public static function getAuthToken($code){
         $http = new Client;
 
-        try{$response = $http->post('https://network.wshovius.nl/oauth/token', [
+        try{$response = $http->post('https://connect.wingingit.nl/oauth/token', [
             'form_params' => [
                 'grant_type' => 'authorization_code',
-                'client_id' => config('hoviusnetconnect.client_id'),
-                'client_secret' => config('hoviusnetconnect.client_secret'),
-                'redirect_uri' => config('hoviusnetconnect.redirect_uri'),
+                'client_id' => config('wingingnetconnect.client_id'),
+                'client_secret' => config('wingingnetconnect.client_secret'),
+                'redirect_uri' => config('wingingnetconnect.redirect_uri'),
                 'code' => $code,
             ]
         ]);
